@@ -1,535 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- App title -->
-    <title>GetUWired</title>
-    <style>
-
-        :root{
-            --white: #f9f9f9;
-            --black: #36383F;
-            --grey: #85888C;
-        }
-
-        /* Reset */
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body{
-            font-family: "Hind", sans-serif;
-            /* responsive background image */
-            background-image: url("http://www.getuwired.com/devtest/Death_to_stock_photography_Vibrant.jpg");
-            background-position: top;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-
-        a{
-            text-decoration: none;
-        }
-
-        ul{
-            list-style: none;
-        }
-
-        /* Header */
-        .header{
-            background-color: white;
-            position: sticky;
-            top: 0;
-            width: 100%;
-        }
-
-        /* Logo */
-        .logo{
-/*            display: inline-block;
-            color: var(--white);
-            font-size: 60px;
-            margin-left: 10px;*/
-
-            display: inline-block;
-            color: #393939;
-            font-size: 2em;
-            margin-left: 136px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        /* Nav menu */
-        .nav{
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            background-color: white;
-            overflow: hidden;
-            
-        }
-
-        .menu a,.menu p{
-            display: block;
-            padding: 30px;
-            color: #393939;
-
-        }
-
-        .menu a:hover{
-            background-color: var(--grey);
-        }
-
-        .nav{
-            max-height: 0;
-            transition: max-height .5s ease-out;
-        }
-
-        /* Sub nav */
-        .subnav-content {
-            background-color:  var(--white);
-            width: 100%;
-            z-index: 1;
-            padding: 20px 0 ;
-            display: none;
-          }
-        .subnav-content a {
-            color: var(--black);
-            text-decoration: none;
-            padding: 0;
-            margin: 10px 0;
-            text-align: center;
-        }
-        .subnav:hover .subnav-content {
-            display: block;
-        }
-
-        /* Menu Icon */
-
-        .hamb{
-            cursor: pointer;
-            float: right;
-            padding: 34px 20px;
-        }
-
-
-        .hamb-line {
-            background: #393939;
-            display: block;
-            height: 2px;
-            position: relative;
-            width: 24px;
-            
-        }
-
-        .hamb-line::before,
-        .hamb-line::after{
-            background: #393939;
-            content: '';
-            display: block;
-            height: 100%;
-            position: absolute;
-            transition: all .2s ease-out;
-            width: 100%;
-        }
-
-        .hamb-line::before{
-            top: 5px;
-        }
-
-        .hamb-line::after{
-            top: -5px;
-        }
-
-
-        .side-menu {
-            display: none;
-        }
-
-        /* Toggle menu icon */
-
-        .side-menu:checked ~ nav{
-            max-height: 100%;
-        }
-
-        .side-menu:checked ~ .hamb .hamb-line {
-            background: transparent;
-        }
-
-        .side-menu:checked ~ .hamb .hamb-line::before {
-            transform: rotate(-45deg);
-            top:0;
-
-        }
-
-        .side-menu:checked ~ .hamb .hamb-line::after {
-            transform: rotate(45deg);
-            top:0;
-        }
-
-        /* UNIVERSAL STYLES */
-
-        .nav-solo p a {
-            padding: 0;
-        }
-
-
-        /* Responsiveness */
-
-        /* STYLES FOR DESKTOP/TABLET */
-        /* if viewport >= 769px, apply these. */
-        @media (min-width: 769px) {
-            .nav{
-                max-height: none;
-                top: 0;
-                position: relative;
-                float: right;
-                width: fit-content;
-                background-color: transparent;
-                margin-right: 50px;
-                overflow: visible;
-            }
-
-            .menu li{
-                float: left;
-                margin: 0px 30px;
-            }
-
-            .menu a:hover{
-                background-color: transparent;
-                color: var(--grey);
-                
-            }
-            
-            .hamb{
-                display: none;
-            }
-
-                /* Sub nav */
-/*            .subnav-content {
-                padding: 20px 0 ;
-                display: none;
-                background-color:  var(--black);
-            }*/
-
-            .subnav-content {
-              background-color: #34cc99;
-              width: max-content;
-              left: 0;
-              z-index: 1;
-              padding: 4px 0 0 0;
-              display: none;
-              position: absolute;
-            }
-
-            .subnav-content a:hover {
-                background-color: #019966;
-                color: white;
-            }
-
-            .menu a, .menu p{
-              margin-top: 30px;
-              margin-bottom: 30px;
-              display: block;
-              padding: 0 6px;
-              color: #393939;
-            }
-
-            .nav-solo p a {
-                padding: 0 6px;
-            }
-
-            .subnav {
-                display: inline-block;
-                position: relative;
-            }
-
-
-
-            .subnav-content a {
-              color: white;
-              font-size: 15px;
-              text-decoration: none;
-              padding: 10px 20px;
-              margin: 0;
-              text-align: center;
-              letter-spacing: 2px;
-              font-weight: 500;
-              text-shadow: #248c69 1px 1.5px;
-            }
-
-            .subnav:hover p, .nav-solo:hover p a {
-              border: 1.5px solid #34cc99;
-              border-top-left-radius: 5px;
-              border-top-right-radius: 5px;
-              background: #34cc99;
-              padding-left: 4.5px;
-              padding-right: 4.5px;
-              padding-bottom: 25px;
-              margin-top: 28.5px;
-              margin-bottom: 0;
-              color: #393939;
-            }
-
-            .nav-solo:hover p {
-                margin-top: 28.5px;
-            }
-
-            .nav-text {
-                letter-spacing: 3px;
-                font-size: 1.2em;
-            }
-
-            .divider {
-                height: 10px;
-                width: 100%;
-                background: #34cc99;
-                display: none;
-            }
-
-
-            nav:hover ~ .divider {
-                display: block;
-            }
-        }
-
-        @media (max-width: 1366px) {
-            .nav {
-              margin-right: 0px;
-            }
-            .logo {
-              margin-left: 80px;
-            }
-        }
-
-        @media (max-width: 1248px) {
-            .logo {
-              font-size: 1.5em;
-              margin-left: 80px;
-            }
-            .nav-text {
-              font-size: 1em;
-            }
-            .menu a, .menu p{
-              margin-top: 28px;
-            }
-            .subnav-content {
-              padding: 3px 0 0 0;
-            }
-            .subnav-content a {
-              margin-top: 0px;
-            }
-            .subnav:hover p, .nav-solo:hover p, .nav-solo:hover p a {
-              padding-bottom: 21px;
-              margin-top: 26.5px;
-            }
-        }
-
-        @media (max-width: 1080px) {
-            .logo {
-              font-size: 1.4em;
-              margin-left: 40px;
-            }
-            .nav-text {
-              font-size: 0.9em;
-            }
-            .menu li {
-              margin: 0px 20px;
-            }
-            /*        .subnav-content {
-              padding: 0;
-            }
-            .subnav:hover p, .nav-solo:hover p a {
-              padding-bottom: 21px;
-            }
-            .menu a, .menu p{
-              margin-top: 28px;
-            }
-            .subnav:hover p, .nav-solo:hover p a {
-              margin-top: 26.5px;
-            }*/
-        }
-
-        @media (max-width: 928px) {
-            .logo {
-              font-size: 1.4em;
-              margin-left: 20px;
-            }
-            .nav-text {
-              font-size: 0.8em;
-            }
-            .menu li {
-              margin: 0px 15px;
-            }
-            .subnav-content {
-              padding: 5px 0 0 0;
-            }
-            .subnav-content a {
-              font-size: 12px;
-            }
-            /*        .subnav-content {
-              padding: 0;
-            }
-            .subnav:hover p, .nav-solo:hover p a {
-              padding-bottom: 21px;
-            }
-            .menu a, .menu p{
-              margin-top: 28px;
-            }
-            .subnav:hover p, .nav-solo:hover p a {
-              margin-top: 26.5px;
-            }*/
-        }
-
-        @media (max-width: 768px) {
-/*            .nav {
-                position: static;
-            }*/
-
-            .menu a, .menu p {
-                margin-top: 0;
-            }
-
-            .menu li {
-                margin: 0;
-            }
-
-            .subnav-content {
-                padding: 0px;
-            }
-
-            .subnav:hover p, .nav-solo:hover p {
-                /*padding-bottom: 0px;*/
-                margin-top: 0;
-                background: #34cc99;
-                padding: 10px;
-            }
-
-            .nav-solo:hover p a {
-                margin-top: 0;
-                background: #34cc99;
-                padding: 0;
-            }
-
-            .nav-text {
-                letter-spacing: 2px;
-            }
-
-            .subnav p, .nav-solo p {
-                padding: 10px;
-            }
-
-            .subnav-content {
-                background: #34cc99;
-                margin-top: -1px;
-                padding-top: 1px;
-            }
-
-            .subnav-content a {
-                padding: 10px 0;
-                color: white;
-                /*font-size: 15px;*/
-                text-decoration: none;
-                letter-spacing: 2px;
-                font-weight: 500;
-                text-shadow: #248c69 1px 1.5px;
-                margin-bottom: 0;
-            }
-
-            .subnav-content a:hover {
-                background-color: #019966;
-            }
-
-/*            .subnav:hover p {
-                background: #34cc99;
-                padding: 10px;
-            }*/
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <title>tyleracosta-menu.html</title>
+  <style>
+    /* Reset */
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      font-family: "Hind", sans-serif;
+      /* Responsive background image */
+      background-image: url("http://www.getuwired.com/devtest/Death_to_stock_photography_Vibrant.jpg");
+      background-position: top;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    ul{
+      list-style: none;
+    }
+
+    .header{
+      background-color: white;
+      position: sticky;
+      top: 0;
+      width: 100%;
+    }
+
+    .logo{
+      display: inline-block;
+      color: #393939;
+      font-size: 2em;
+      margin-left: 136px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* Nav Menu */
+
+    .nav{
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      background-color: white;
+      overflow: hidden;
+      /* Prevent line from showing between sections on mobile */
+      margin-top: -1px;
+      padding-top: 1px;
+    }
+
+    .menu a,.menu p{
+      display: block;
+      padding: 30px;
+      color: #393939;
+
+    }
+
+    .nav{
+      max-height: 0;
+      transition: max-height .5s ease-out;
+    }
+
+    .nav-solo p a {
+      padding: 0;
+    }
+
+    /* Sub Nav */
+
+    .subnav-content {
+      background-color: white;
+      width: 100%;
+      z-index: 1;
+      padding: 20px 0;
+      display: none;
+    }
+
+    .subnav-content a {
+      text-decoration: none;
+      padding: 0;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .subnav:hover .subnav-content {
+      display: block;
+    }
+
+    /* Menu Icon */
+
+    .hamb{
+      cursor: pointer;
+      float: right;
+      padding: 34px 20px;
+    }
+
+    .hamb-line {
+      background: #393939;
+      display: block;
+      height: 2px;
+      position: relative;
+      width: 24px;
+
+    }
+
+    .hamb-line::before,
+    .hamb-line::after{
+      background: #393939;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all .2s ease-out;
+      width: 100%;
+    }
+
+    .hamb-line::before{
+      top: 5px;
+    }
+
+    .hamb-line::after{
+      top: -5px;
+    }
+
+    .side-menu {
+      display: none;
+    }
+
+    /* Toggle Menu Icon */
+
+    .side-menu:checked ~ nav{
+      max-height: 100%;
+    }
+
+    .side-menu:checked ~ .hamb .hamb-line {
+      background: transparent;
+    }
+
+    .side-menu:checked ~ .hamb .hamb-line::before {
+      transform: rotate(-45deg);
+      top:0;
+    }
+
+    .side-menu:checked ~ .hamb .hamb-line::after {
+      transform: rotate(45deg);
+      top:0;
+    }
+
+    /* Media Queries */
+
+    /* Desktop, Laptop, Tablet */
+
+    @media (min-width: 769px) {
+      .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+        margin-right: 50px;
+        overflow: visible;
+      }
+
+      .menu li{
+        float: left;
+        margin: 0px 30px;
+      }
+
+      .hamb{
+        display: none;
+      }
+
+      .subnav-content {
+        background-color: #34cc99;
+        width: max-content;
+        left: 0;
+        z-index: 1;
+        padding: 4px 0 0 0;
+        display: none;
+        position: absolute;
+      }
+
+      .subnav-content a:hover {
+        background-color: #019966;
+        color: white;
+      }
+
+      .menu a, .menu p{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        display: block;
+        padding: 0 6px;
+        color: #393939;
+      }
+
+      .nav-solo p a {
+        padding: 0 6px;
+      }
+
+      .subnav {
+        display: inline-block;
+        position: relative;
+      }
+
+      .subnav-content a {
+        color: white;
+        font-size: 15px;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0;
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: 500;
+        text-shadow: #248c69 1px 1.5px;
+      }
+
+      .subnav:hover p, .nav-solo:hover p a {
+        border: 1.5px solid #34cc99;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: #34cc99;
+        padding-left: 4.5px;
+        padding-right: 4.5px;
+        padding-bottom: 25px;
+        margin-top: 28.5px;
+        margin-bottom: 0;
+        color: #393939;
+      }
+
+      .nav-solo:hover p {
+        margin-top: 28.5px;
+      }
+
+      .nav-text {
+        letter-spacing: 3px;
+        font-size: 1.2em;
+      }
+
+      .divider {
+        height: 10px;
+        width: 100%;
+        background: #34cc99;
+        display: none;
+      }
+
+      nav:hover ~ .divider {
+        display: block;
+      }
+    }
+
+    @media (max-width: 1366px) {
+      .nav {
+        margin-right: 0px;
+      }
+
+      .logo {
+        margin-left: 80px;
+      }
+    }
+
+    @media (max-width: 1248px) {
+      .logo {
+        font-size: 1.5em;
+        margin-left: 80px;
+      }
+
+      .nav-text {
+        font-size: 1em;
+      }
+
+      .menu a, .menu p{
+        margin-top: 28px;
+      }
+
+      .subnav-content {
+        padding: 3px 0 0 0;
+      }
+
+      .subnav-content a {
+        margin-top: 0px;
+      }
+
+      .subnav:hover p, .nav-solo:hover p, .nav-solo:hover p a {
+        padding-bottom: 21px;
+        margin-top: 26.5px;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .logo {
+        font-size: 1.4em;
+        margin-left: 40px;
+      }
+
+      .nav-text {
+        font-size: 0.9em;
+      }
+
+      .menu li {
+        margin: 0px 20px;
+      }
+    }
+
+    @media (max-width: 928px) {
+      .logo {
+        font-size: 1.4em;
+        margin-left: 20px;
+      }
+
+      .nav-text {
+        font-size: 0.8em;
+      }
+
+      .menu li {
+        margin: 0px 15px;
+      }
+
+      .subnav-content {
+        padding: 5px 0 0 0;
+      }
+
+      .subnav-content a {
+        font-size: 12px;
+      }
+    }
+
+    /* Mobile */
+
+    @media (max-width: 768px) {
+      .menu a, .menu p {
+        margin-top: 0;
+      }
+
+      .menu li {
+        margin: 0;
+      }
+
+      .subnav:hover p, .nav-solo:hover p {
+        /*padding-bottom: 0px;*/
+        margin-top: 0;
+        background: #34cc99;
+        padding: 10px;
+      }
+
+      .nav-solo:hover p a {
+        margin-top: 0;
+        background: #34cc99;
+        padding: 0;
+      }
+
+      .nav-text {
+        letter-spacing: 2px;
+      }
+
+      .subnav p, .nav-solo p {
+        padding: 10px;
+      }
+
+      .subnav-content {
+        background: #34cc99;
+        /* Prevent line from showing between sections on mobile */
+        margin-top: -1px;
+        padding-top: 1px;
+      }
+
+      .subnav-content a {
+        padding: 10px 0;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-weight: 500;
+        text-shadow: #248c69 1px 1.5px;
+        margin-bottom: 0;
+      }
+
+      .subnav-content a:hover {
+        background-color: #019966;
+      }
+    }
+  </style>
 </head>
 <body>
-    
-    <!-- Navigation bar -->
-    <header class="header">
-        <!-- Logo -->
-        <a href="#" class="logo">GETUWIRED</a>
-
-        <!-- Hamburger icon -->
-        <input class="side-menu" type="checkbox" id="side-menu"/>
-        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
-
-        <!-- Menu -->
-        <nav class="nav">
-<!--             <ul class="menu">
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Blog</a> </li>
-                <li><a href="#">About</a></li>
-                <li class="subnav">
-                    <p class="subnavbtn">Contact <i class="fa fa-caret-down"></i></p>
-                    <div class="subnav-content">
-                        <a href="#">Email</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Phone</a>
-                    </div>
-                </li>
-                <li class="subnav">
-                    <p class="subnavbtn">Contact <i class="fa fa-caret-down"></i></p>
-                    <div class="subnav-content">
-                        <a href="#">Email</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Phone</a>
-                    </div>
-                </li>
-            </ul> -->
-            <ul class="menu">
-                <li class="subnav">
-                    <p class="nav-text">ABOUT</p>
-                    <div class="subnav-content">
-                        <a href="#">OUR STORY</a>
-                        <a href="#">OUR COMMITMENT TO YOU</a>
-                    </div>
-                </li>
-                <li class="subnav">
-                    <p class="nav-text">LOCATIONS</p>
-                    <div class="subnav-content">
-                        <a href="#">AUSTIN, TX</a>
-                        <a href="#">ATLANTA, GA</a>
-                        <a href="#">SEATTLE, WA</a>
-                        <a href="#">PORTLAND, OR</a>
-                    </div>
-                </li>
-                <li class="subnav">
-                    <p class="nav-text">PRODUCTS</p>
-                    <div class="subnav-content">
-                        <a href="#">NEW ARRIVALS</a>
-                        <a href="#">FEATURED</a>
-                        <a href="#">TOP RATED</a>
-                        <a href="#">HIS</a>
-                        <a href="#">HERS</a>
-                        <a href="#">KIDS</a>
-                        <a href="#">ACCESSORIES</a>
-                        <a href="#">SPRING CATALOG</a>
-                        <a href="#">THE ESSENTIALS</a>
-                        <a href="#">SALE</a>
-                    </div>
-                </li>
-                <li class="nav-solo"><p><a class="nav-text" href="#">BLOG</a></p></li>
-                <li class="nav-solo"><p><a class="nav-text" href="#">CONTACT</a></p></li>
-            </ul>
-        </nav>
-        <div class="divider"></div>
-    </header>
-
+  <!-- Navigation bar -->
+  <header class="header">
+    <!-- Logo -->
+    <a href="#" class="logo">GETUWIRED</a>
+    <!-- Hamburger icon -->
+    <input class="side-menu" type="checkbox" id="side-menu"/>
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <!-- Menu -->
+    <nav class="nav">
+      <ul class="menu">
+        <li class="subnav">
+          <p class="nav-text">ABOUT</p>
+          <div class="subnav-content">
+            <a href="#">OUR STORY</a>
+            <a href="#">OUR COMMITMENT TO YOU</a>
+          </div>
+        </li>
+        <li class="subnav">
+          <p class="nav-text">LOCATIONS</p>
+          <div class="subnav-content">
+            <a href="#">AUSTIN, TX</a>
+            <a href="#">ATLANTA, GA</a>
+            <a href="#">SEATTLE, WA</a>
+            <a href="#">PORTLAND, OR</a>
+          </div>
+        </li>
+        <li class="subnav">
+          <p class="nav-text">PRODUCTS</p>
+          <div class="subnav-content">
+            <a href="#">NEW ARRIVALS</a>
+            <a href="#">FEATURED</a>
+            <a href="#">TOP RATED</a>
+            <a href="#">HIS</a>
+            <a href="#">HERS</a>
+            <a href="#">KIDS</a>
+            <a href="#">ACCESSORIES</a>
+            <a href="#">SPRING CATALOG</a>
+            <a href="#">THE ESSENTIALS</a>
+            <a href="#">SALE</a>
+          </div>
+        </li>
+        <li class="nav-solo"><p><a class="nav-text" href="#">BLOG</a></p></li>
+        <li class="nav-solo"><p><a class="nav-text" href="#">CONTACT</a></p></li>
+      </ul>
+    </nav>
+    <div class="divider"></div>
+  </header>
 </body>
 </html>

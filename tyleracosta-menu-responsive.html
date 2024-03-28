@@ -120,7 +120,7 @@
         .hamb{
             cursor: pointer;
             float: right;
-            padding: 40px 20px;
+            padding: 34px 20px;
         }
 
 
@@ -302,6 +302,94 @@
             nav:hover ~ .divider {
                 display: block;
             }
+        }
+
+        @media (max-width: 1366px) {
+            .nav {
+              margin-right: 0px;
+            }
+            .logo {
+              margin-left: 80px;
+            }
+        }
+
+        @media (max-width: 1248px) {
+            .logo {
+              font-size: 1.5em;
+              margin-left: 80px;
+            }
+            .nav-text {
+              font-size: 1em;
+            }
+            .menu a, .menu p{
+              margin-top: 28px;
+            }
+            .subnav-content {
+              padding: 3px 0 0 0;
+            }
+            .subnav-content a {
+              margin-top: 0px;
+            }
+            .subnav:hover p, .nav-solo:hover p, .nav-solo:hover p a {
+              padding-bottom: 21px;
+              margin-top: 26.5px;
+            }
+        }
+
+        @media (max-width: 1080px) {
+            .logo {
+              font-size: 1.4em;
+              margin-left: 40px;
+            }
+            .nav-text {
+              font-size: 0.9em;
+            }
+            .menu li {
+              margin: 0px 20px;
+            }
+            /*        .subnav-content {
+              padding: 0;
+            }
+            .subnav:hover p, .nav-solo:hover p a {
+              padding-bottom: 21px;
+            }
+            .menu a, .menu p{
+              margin-top: 28px;
+            }
+            .subnav:hover p, .nav-solo:hover p a {
+              margin-top: 26.5px;
+            }*/
+        }
+
+        @media (max-width: 928px) {
+            .logo {
+              font-size: 1.4em;
+              margin-left: 20px;
+            }
+            .nav-text {
+              font-size: 0.8em;
+            }
+            .menu li {
+              margin: 0px 15px;
+            }
+            .subnav-content {
+              padding: 5px 0 0 0;
+            }
+            .subnav-content a {
+              font-size: 12px;
+            }
+            /*        .subnav-content {
+              padding: 0;
+            }
+            .subnav:hover p, .nav-solo:hover p a {
+              padding-bottom: 21px;
+            }
+            .menu a, .menu p{
+              margin-top: 28px;
+            }
+            .subnav:hover p, .nav-solo:hover p a {
+              margin-top: 26.5px;
+            }*/
         }
     </style>
 </head>

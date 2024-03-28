@@ -188,8 +188,8 @@
         /* Responsiveness */
 
         /* STYLES FOR DESKTOP/TABLET */
-        /* if viewport >= 768px, apply these. */
-        @media (min-width: 768px) {
+        /* if viewport >= 769px, apply these. */
+        @media (min-width: 769px) {
             .nav{
                 max-height: none;
                 top: 0;
@@ -389,6 +389,50 @@
             }
             .subnav:hover p, .nav-solo:hover p a {
               margin-top: 26.5px;
+            }*/
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                position: static;
+            }
+
+            .menu a, .menu p {
+                margin-top: 0;
+            }
+
+            .menu li {
+                margin: 0;
+            }
+
+            .subnav-content {
+                padding: 0px;
+            }
+
+            .subnav:hover p, .nav-solo:hover p {
+                /*padding-bottom: 0px;*/
+                margin-top: 0;
+                background: #34cc99;
+                padding: 10px;
+            }
+
+            .nav-solo:hover p a {
+                margin-top: 0;
+                background: #34cc99;
+                padding: 0;
+            }
+
+            .nav-text {
+                letter-spacing: 2px;
+            }
+
+            .subnav p, .nav-solo p {
+                padding: 10px;
+            }
+
+/*            .subnav:hover p {
+                background: #34cc99;
+                padding: 10px;
             }*/
         }
     </style>

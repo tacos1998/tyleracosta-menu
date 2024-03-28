@@ -197,11 +197,13 @@
                 float: right;
                 width: fit-content;
                 background-color: transparent;
-
+                margin-right: 50px;
+                overflow: visible;
             }
 
             .menu li{
                 float: left;
+                margin: 0px 30px;
             }
 
             .menu a:hover{
@@ -215,15 +217,85 @@
             }
 
                 /* Sub nav */
-            .subnav-content {
+/*            .subnav-content {
                 padding: 20px 0 ;
                 display: none;
                 background-color:  var(--black);
+            }*/
+
+            .subnav-content {
+              background-color: #34cc99;
+              width: max-content;
+              left: 0;
+              z-index: 1;
+              padding: 4px 0 0 0;
+              display: none;
+              position: absolute;
             }
-            .subnav-content a {
+
+            .subnav-content a:hover {
+                background-color: #019966;
                 color: white;
             }
 
+            .menu a, .menu p{
+              margin-top: 30px;
+              margin-bottom: 30px;
+              padding: 0px;
+            }
+
+            .subnav {
+                display: inline-block;
+                position: relative;
+            }
+
+
+
+            .subnav-content a {
+              color: white;
+              font-size: 15px;
+              text-decoration: none;
+              padding: 10px 20px;
+              margin: 0;
+              text-align: center;
+              letter-spacing: 2px;
+              font-weight: 500;
+              text-shadow: #248c69 1px 1.5px;
+            }
+
+            .subnav:hover p, .nav-solo:hover p a {
+              border: 1.5px solid #34cc99;
+              border-top-left-radius: 5px;
+              border-top-right-radius: 5px;
+              background: #34cc99;
+              padding-left: 4.5px;
+              padding-right: 4.5px;
+              padding-bottom: 25px;
+              margin-top: 28.5px;
+              margin-bottom: 0;
+              color: #393939;
+            }
+
+            .nav-solo:hover p {
+                margin-top: 28.5px;
+            }
+
+            .nav-text {
+                letter-spacing: 3px;
+                font-size: 1.2em;
+            }
+
+            .divider {
+                height: 10px;
+                width: 100%;
+                background: #34cc99;
+                display: none;
+            }
+
+
+            nav:hover ~ .divider {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -297,6 +369,7 @@
                 <li class="nav-solo"><p><a class="nav-text" href="#">CONTACT</a></p></li>
             </ul>
         </nav>
+        <div class="divider"></div>
     </header>
 
 </body>
